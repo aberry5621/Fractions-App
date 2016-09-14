@@ -4,10 +4,7 @@
 //
 //  Created by ax on 9/14/16.
 //  Copyright © 2016 COMP130. All rights reserved.
-//
-// fraction_program.cpp
-// Coder: Alex
-// purpose: process fraction pairs
+//  purpose: process fraction pairs
 //
 
 #include <iostream>
@@ -107,8 +104,6 @@ int main() {
             cout << "You entered " << fraction_op_type  << ", which isn't a valid option. Please try again" << endl;
             break;
     }
-    
-    
     
     return 0;
 }
