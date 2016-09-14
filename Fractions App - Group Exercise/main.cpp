@@ -29,8 +29,14 @@ int main() {
     int wn = 0, pn = 0, pd = 0;
     
     // I
-    cout << "Process Fractions" << endl;
-    cout << "Choose a type of fraction operation, (1 for addition): ";
+    cout << "Fractions Calculator" << endl;
+    cout << "====================" << endl;
+    cout << "1. Addition" << endl;
+    cout << "2. Subtraction" << endl;
+    cout << "3. Multiplcation" << endl;
+    cout << "4. Division" << endl;
+    cout << "                    " << endl;
+    cout << "Choose option (1 - 4):   ";
     cin >> fraction_op_type;
     
     
@@ -38,24 +44,23 @@ int main() {
     switch(fraction_op_type) {
         // case 1, fraction addition
         case 1:
-            cout << "You Chose 1, Addition" << endl;
-            cout << "Enter the numerator for fraction 1: ";
+            cout << "You Chose 1, Fraction Addition" << endl;
+            cout << "For the first fraction:   "<< endl;
+            cout << "Enter the numerator:   ";
             cin >> n1;
-            cout << "Enter the denominator for fraction 1: ";
+            cout << "Enter the denominator:    ";
             cin >> d1;
-            cout << "Enter the numerator for fraction 2: ";
+            cout << "Enter the numerator:   ";
             cin >> n2;
-            cout << "Enter the denominator for fraction 2: ";
+            cout << "Enter the denominator:    ";
             cin >> d2;
             
+            
+
             // handle possible inputs tree
             if (d1 == 0 || d2 == 0) {
-                cout << "Error: Cannot divide by zero" << endl;
-            }
-            else if (d1 == 100) {
-                // standby for other conditions
-            }
-            else {
+                cout << "ERROR: fractions cannot have zero denominators!" << endl;
+            } else {
                 // do the math for simple fraction addition
                 
                 // set denominators to lowest common denominator
@@ -67,9 +72,13 @@ int main() {
                 result_n = eq_n1 + eq_n2;
                 result_d = lcd;
                 // OUTPUTS
-                if (result_n < result_d) {
+                if (result_n == 0) {
+                    // zero fraction, result zero. show variable result for testing porpoises
+                    cout << "The result is: " << result_n << endl;
+                } else if (result_n < result_d) {
                     // proper fraction, show the result
                     cout << "The result is: " << result_n << " / " << result_d << endl;
+
                 } else if (result_n > result_d) {
                     // improper like 4/3 so convert to proper like: 1 1/3
                     wn = result_n / result_d;
@@ -86,16 +95,16 @@ int main() {
         
             break;
         case 2:
-            cout << "You Chose 2" << endl;
+            cout << "You Chose 2, Fraction Subtraction" << endl;
             break;
         case 3:
-            cout << "You Chose 3" << endl;
+            cout << "You Chose 3, Fraction Multiplication" << endl;
             break;
         case 4:
-            cout << "You Chose 4" << endl;
+            cout << "You Chose 4, Fraction Division" << endl;
             break;
         default:
-            cout << "You Chose NOTHIN" << endl;
+            cout << "You entered " << fraction_op_type  << ", which isn't a valid option. Please try again" << endl;
             break;
     }
     
